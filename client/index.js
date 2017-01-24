@@ -1,5 +1,18 @@
+//Client entry point
+
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/app';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
-render(<App />, document.getElementById('app'));
+import App from './components/App';
+import QuoteView from './components/QuoteView';
+import ContributeView from './components/ContributeView';
+  
+render(
+  <Router history={browserHistory}>
+    <Route path='/' component={App}>
+      <IndexRoute component={QuoteView}></IndexRoute>
+      <Route path='QuoteView' component={QuoteView}></Route>
+      <Route path='ContributeView' component={ContributeView}></Route>
+    </Route>
+  </Router>, document.getElementById('app'));

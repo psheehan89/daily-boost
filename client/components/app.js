@@ -1,13 +1,16 @@
 import React from 'react';
-import Header from './header';
-import QuoteBody from './quote-body-view.js';
+import Header from './Header';
+import QuoteView from './QuoteView';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div>
         <Header />
-        <QuoteBody />
+        {this.props.children}
       </div>
     )
   }
