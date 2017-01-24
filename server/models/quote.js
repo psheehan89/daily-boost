@@ -4,9 +4,6 @@ import mongoose from 'mongoose';
 var quoteSchema = mongoose.Schema({
   quote: String,
   genre: String,
-  id: {
-    unique: true
-  }
   date: {
     type: Date,
     default: Date.now

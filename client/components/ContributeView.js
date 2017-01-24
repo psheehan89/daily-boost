@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import axios from 'axios';
 
 
 export default class QuoteView extends React.Component {
@@ -7,8 +8,16 @@ export default class QuoteView extends React.Component {
     return (
       <div>
         <input type="text" className="form-control" placeholder="Say something nice!"/>
-        <Link to='QuoteView'><button onClick={this.handleNewQuoteClick}>Nevermind, I want quotes!</button></Link>
-        <button onClick={this.handleContributeClick}>Submit my entry!</button>
+        <button 
+          className='btn btn-default' 
+          onClick={this.handleNewQuoteClick}>
+          <Link to='QuoteView'>Nevermind, I want quotes!</Link>
+        </button>
+        <button 
+          className='btn btn-default' 
+          type='submit' 
+          onClick={this.handleContributeClick}>Submit my entry!
+        </button>
       </div>
     )
   }
@@ -18,7 +27,11 @@ export default class QuoteView extends React.Component {
   }
 
   handleContributeClick() {
+    var inputText = document.querySelector('.form-control').value;
+    console.log('input text: ', inputText);
     //add quote to the database
-    console.log('we\'ll send that for you');
+    axios.post('/quotes', {quote: inputText})
+      .then((response) => console.log('response: ', response.data.quote))
+      .then(document.querySelector('.form-control').value = '');
   }
 }
