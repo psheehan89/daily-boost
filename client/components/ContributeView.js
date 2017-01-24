@@ -6,15 +6,17 @@ import axios from 'axios';
 export default class QuoteView extends React.Component {
   render() {
     return (
-      <div>
-        <input type="text" className="form-control" placeholder="Say something nice!"/>
+      <div className='text-center'>
+        <input type="text" className="form-control transparent-input" placeholder="Say something nice!"/>
+        <Link to='QuoteView'>
+          <button 
+            className='btn btn-primary-outline' 
+            onClick={this.handleNewQuoteClick}>
+            Nevermind, I want quotes!
+          </button>
+        </Link>
         <button 
-          className='btn btn-default' 
-          onClick={this.handleNewQuoteClick}>
-          <Link to='QuoteView'>Nevermind, I want quotes!</Link>
-        </button>
-        <button 
-          className='btn btn-default' 
+          className='btn btn-primary-outline' 
           type='submit' 
           onClick={this.handleContributeClick}>Submit my entry!
         </button>

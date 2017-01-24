@@ -7,22 +7,22 @@ export default class QuoteView extends React.Component {
   constructor() {
     super();
     this.state = {
-      quote: 'Hack Reactor got you feeling down? \nClick below to brighten up your day'
+      quote: 'Coding got you feeling down? \nClick below to brighten up your day or maybe you can brighten up someones day'
     }
   }
 
   render() {
     return (
-      <div>
+      <div className='text-center'>
         <QuoteItem 
           quote={this.state.quote}
           getNewQuote={this.handleNewQuoteClick.bind(this)}/>
-        <button className='btn btn-default' 
+        <button className='btn btn-primary-outline' 
           onClick={this.handleNewQuoteClick.bind(this)}>Get Another Quote
         </button>
         <Link to='ContributeView'>
           <button 
-            className='btn btn-default' 
+            className='btn btn-primary-outline' 
             onClick={this.handleContributeClick.bind(this)}>Contribute Your Own!
           </button>
         </Link>

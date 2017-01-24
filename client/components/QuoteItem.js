@@ -13,7 +13,7 @@ export default class QuoteItem extends React.Component {
   render() {
     console.log(this.props)
     return (
-      <div className='quote'>{this.props.quote}</div>
+      <div className='text-center quote'>{this.props.quote}</div>
     )
   }
 }
