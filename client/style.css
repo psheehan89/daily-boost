@@ -11,7 +11,7 @@ body {
 
 .quote {
   height: 200px;
-  color: rgba(217, 237, 247, 0.85);
+  color: rgba(217, 237, 247, 0.75);
   font-size: 30px;
   font-family: helvetica;
   padding: 35px;
@@ -22,10 +22,9 @@ body {
   font-family: helvetica;
   font-weight: normal;
   font-size: 100px;
-  color: rgba(251, 228, 255, 0.65);  
+  color: rgba(251, 228, 255, 0);
   padding-top: 150px;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.25)
-
+  -webkit-text-stroke: 2px #8e8890;
 }
 
 .btn-primary-outline {
@@ -44,9 +43,9 @@ body {
 .form-control {
   height: 200px;
   background-color: transparent;
-  font-size: 28px;
+  color: rgba(217, 237, 247, 0.85);
+  font-size: 24px;
   border: none;
   text-align: center;
-  color: white;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.25)
 }

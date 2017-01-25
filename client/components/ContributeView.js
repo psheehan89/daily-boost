@@ -12,13 +12,13 @@ export default class QuoteView extends React.Component {
           <button 
             className='btn btn-primary-outline' 
             onClick={this.handleNewQuoteClick}>
-            Nevermind, I want quotes!
+            Go Get New Quotes
           </button>
         </Link>
         <button 
           className='btn btn-primary-outline' 
           type='submit' 
-          onClick={this.handleContributeClick}>Submit my entry!
+          onClick={this.handleContributeClick}>Submit My Quote
         </button>
       </div>
     )
