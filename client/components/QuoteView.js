@@ -7,7 +7,7 @@ export default class QuoteView extends React.Component {
   constructor() {
     super();
     this.state = {
-      quote: 'Coding got you feeling down? \nClick below for some motivation, or brighten up someone\'s day'
+      quote: 'Coding got you feeling down? \nClick below for some motivation, or leave your own quote to brighten up someone\'s day'
     }
   }
 
