@@ -4,7 +4,8 @@
   "description": "When you need a little something extra to get you through your day",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/server.js --exec babel-node --presets es2015",
+    "client": "webpack --progress --inline --hot",
+    "server": "nodemon server/server.js --exec babel-node --presets es2015",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Patrick Sheehan",
@@ -27,8 +28,9 @@
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
-    "react-hot-loader": "^1.3.1",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.15.0"
   }
 }

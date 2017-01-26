@@ -22,7 +22,7 @@ export default class QuoteView extends React.Component {
         </button>
       </div>
     )
-  }
+  }//
 
   handleNewQuoteClick() {
     console.log('you want quotes');

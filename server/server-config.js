@@ -1,22 +1,22 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import db from './config';
-import Quote from './models/quote'
+import Quote from './models/quote';
 import path from 'path';
+import webpack from 'webpack';
+import webpackConfig from '../webpack.config';
+
+var compiler = webpack(webpackConfig);
+
 
 var app = express();
+app.use(require("webpack-hot-middleware")(compiler));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var dummyQuotes = [{
-  quote: 'Something inspirational'
-},
-{
-  quote: 'Something else'
-},
-{
-  quote: 'Something please'
-}]
+app.use(require("webpack-dev-middleware")(compiler, {
+    noInfo: true, publicPath: webpackConfig.output.publicPath
+}));
 
 app.get('/quotes', (request, response) => {
   //response.send(dummyQuotes)
@@ -36,6 +36,6 @@ app.post('/quotes', (request, response) => {
   })  
 })
 
-app.use(express.static(path.join(__dirname, '../client')))
+app.use(express.static('client'))
 
 module.exports = app;
